@@ -14,11 +14,11 @@ connection, address = tcp_socket.accept()
 print("Connection address: {0}".format(address))
 
 while True:
-    connection.send("0")
+    connection.send("0".encode("utf-8"))
     time.sleep(1)
 
     print("PING")
-    connection.send("1")
+    connection.send("1".encode("utf-8"))
     time.sleep(1)
 
 connection.close()
