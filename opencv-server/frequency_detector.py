@@ -25,8 +25,8 @@ class FrequencyDetector:
         color = (255, 30, 30)
         count = 0
         for (frequency, result) in data[1:5]:
-            count += abs(0.125 - abs(frequency)) <= 0.05 and result >= 10
-            count += abs(0.25 - abs(frequency)) <= 0.05 and result >= 10
+            count += abs(0.125 - abs(frequency)) <= 0.05 and result >= 5
+            count += abs(0.25 - abs(frequency)) <= 0.05 and result >= 5
 
         if count >= 4:
             print(data[1:5])
@@ -44,3 +44,5 @@ class FrequencyDetector:
             color,
             2,
         )
+
+        return count >= 4
