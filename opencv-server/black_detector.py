@@ -6,7 +6,7 @@ class BlackDetector:
     def __init__(self, blurred, count):
         self.blurred = blurred
 
-        thresholded = cv2.threshold(blurred, 30, 255, cv2.THRESH_BINARY_INV)[1]
+        thresholded = cv2.threshold(blurred, 40, 255, cv2.THRESH_BINARY_INV)[1]
         thresholded = cv2.erode(thresholded, None, iterations=8)
         thresholded = cv2.dilate(thresholded, None, iterations=4)
         self.thresholded = thresholded

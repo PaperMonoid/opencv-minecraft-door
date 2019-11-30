@@ -1,4 +1,5 @@
 import socket
+import datetime
 
 
 TCP_IP = "localhost"
@@ -11,6 +12,6 @@ tcp_socket.connect((TCP_IP, TCP_PORT))
 while True:
     data = tcp_socket.recv(BUFFER_SIZE)
     if data == "1":
-        print("PONG!")
+        print(datetime.datetime.now())
 
 s.close()
